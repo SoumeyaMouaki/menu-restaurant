@@ -1,0 +1,33 @@
+// Initialize counters
+length := 0
+words := 1         // Start from 1 assuming at least one word if sentence is not empty
+vowels := 0
+
+// Read the first character
+Read(char)
+
+// Loop until the character is '.'
+WHILE char != '.' DO
+    length := length + 1
+
+    // Check if the character is a space → increment words count
+    IF char = ' ' THEN
+        words := words + 1
+    END_IF
+
+    // Check if the character is a vowel (case-insensitive)
+    IF char IN ['a','e','i','o','u','A','E','I','O','U'] THEN
+        vowels := vowels + 1
+    END_IF
+
+    // Read next character
+    Read(char)
+END_WHILE
+
+// Include the final '.' in length count
+length := length + 1
+
+// Output the results
+Write("Length of sentence: ", length)
+Write("Number of words: ", words)
+Write("Number of vowels: ", vowels)
